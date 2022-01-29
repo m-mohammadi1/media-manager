@@ -26,7 +26,6 @@ class FolderController extends Controller
         $folder = $folderAction->call($data);
 
 
-        dd($folder);
     }
 
 

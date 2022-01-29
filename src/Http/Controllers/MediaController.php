@@ -4,6 +4,7 @@ namespace MediaManager\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Validation\Rule;
 use MediaManager\Actions\Folder\CreateFolderAction;
 use MediaManager\Actions\Media\CreateMediaAction;
@@ -24,7 +25,9 @@ class MediaController extends Controller
             'folder_id' => ['sometimes', Rule::exists('manager_files', 'id')]
         ]);
 
-        $folder = $mediaAction->call($data['file']);
+        $folder = $mediaAction->call($data['file'], Arr::except($data, 'file'), [
+            'visibility' => 'public'
+        ]);
 
 
         dd($folder);
