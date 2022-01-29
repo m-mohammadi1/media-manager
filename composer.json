@@ -1,0 +1,23 @@
+{
+    "name": "luckyboy1001/media-manager",
+    "description": "A file manager for the lovely programmers",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "MediaManager\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammad Mohammadi",
+            "email": "m.mohammadi.developer@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MediaManager\\Providers\\MediaManagerServiceProvider"
+            ]
+        }
+    }
+}
